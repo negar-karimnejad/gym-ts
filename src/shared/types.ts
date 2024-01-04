@@ -3,3 +3,9 @@ export type benefitsProps= {
     title: string;
     description: string;
 }
+
+export type ClassesProps= {
+    name: string;
+    description?: string | undefined;
+    image: string;
+}

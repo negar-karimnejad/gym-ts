@@ -1,4 +1,5 @@
 import Benefits from "./scenes/benefits";
+import Contact from "./scenes/contact";
 import Home from "./scenes/home";
 import Navbar from "./scenes/navbar";
 import OurClasses from "./scenes/ourClasses";
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Benefits />
       <OurClasses />
+      <Contact />
     </div>
   );
 }
