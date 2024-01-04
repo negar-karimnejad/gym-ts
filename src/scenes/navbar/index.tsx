@@ -18,7 +18,6 @@ const Navbar = (props: Props) => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        // setSelectedPage(SelectedPage.Home);
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
@@ -27,8 +26,8 @@ const Navbar = (props: Props) => {
   }, []);
 
   return (
-    <div className={`${isTopOfPage ? "" : "sticky top-0 bg-primary-100"}`}>
-      <nav className="lg:max-w-screen-md sticky top-0 z-50 mx-auto flex w-5/6 justify-between py-5">
+    <div className={`${isTopOfPage ? "" : "fixed top-0 left-0 bg-primary-100 w-full z-50 drop-shadow"}`}>
+      <nav className="lg:max-w-screen-md sticky top-0 mx-auto flex w-5/6 justify-between py-5">
         <div className="flex items-center gap-20">
           <img src={Logo} alt="Logo" />
           <ul className="hidden items-center gap-5 md:flex">
