@@ -1,3 +1,5 @@
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 type LinkProps = {
   title: string;
   activeNavItem: string;
@@ -5,15 +7,18 @@ type LinkProps = {
 };
 
 function Link({ title, activeNavItem, setActiveNavItem }: LinkProps) {
+  console.log(title.toLocaleLowerCase().replace(" ", "-"));
+
   return (
-    <li
+    <AnchorLink
       className={`${
         activeNavItem === title ? "text-primary-500" : ""
       } cursor-pointer`}
       onClick={() => setActiveNavItem(title)}
+      href={`#${title.toLocaleLowerCase().replace(" ", "-")}`}
     >
       {title}
-    </li>
+    </AnchorLink>
   );
 }
 

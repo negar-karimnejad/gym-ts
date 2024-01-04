@@ -4,9 +4,9 @@ import Sparkles from "@/assets/Sparkles.png";
 import ActionButton from "@/shared/ActionButton ";
 import { benefitsProps } from "@/shared/types";
 import {
-    AcademicCapIcon,
-    HomeModernIcon,
-    UserGroupIcon,
+  AcademicCapIcon,
+  HomeModernIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import Benefit from "./Benefit";
 
@@ -33,7 +33,7 @@ function Benefits() {
   ];
 
   return (
-    <div className="mx-auto mt-16 w-5/6">
+    <div className="mx-auto mt-16 w-5/6" id="benefits">
       <div className="md:my-5 md:w-3/5">
         <h2 className="font-montserrat text-xl font-extrabold">
           MORE THAN JUST GYM.
@@ -49,7 +49,7 @@ function Benefits() {
           <Benefit key={item.title} {...item} />
         ))}
       </div>
-      <div className="mt-20 flex flex-col items-center gap-16 md:flex-row">
+      <div className="mt-24 flex flex-col-reverse items-center gap-16 md:flex-row">
         <img src={BenefitsPageGraphic} alt="BenefitsPageGraphic" />
         <div className="relative">
           <img

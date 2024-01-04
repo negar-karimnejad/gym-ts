@@ -1,16 +1,16 @@
-import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import EvolveText from "@/assets/EvolveText.png";
+import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import HomePageText from "@/assets/HomePageText.png";
-import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import ActionButton from "@/shared/ActionButton ";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Home() {
   return (
-    <div className="bg-gray-20">
-      <div className="mx-auto mt-16 flex w-5/6 items-center gap-16 py-10">
+    <div className="bg-gray-20" id="home">
+      <div className="mx-auto mt-16 flex w-5/6 flex-col items-center gap-16 py-10 md:flex-row">
         <div>
           <img src={EvolveText} alt="EvolveText" className="w-[550px]" />
           <img
@@ -38,7 +38,7 @@ function Home() {
         </div>
       </div>
       <div className="h-20 w-full bg-primary-100 ">
-        <div className="mx-auto grid h-full w-5/6 grid-cols-4 gap-x-5 place-content-center items-center">
+        <div className="mx-auto grid h-full w-5/6 grid-cols-3 place-content-center items-center gap-x-14 md:grid-cols-4 md:gap-x-5">
           <img src={SponsorRedBull} alt="SponsorRedBull" />
           <img src={SponsorForbes} alt="SponsorForbes" />
           <img src={SponsorFortune} alt="SponsorFortune" />

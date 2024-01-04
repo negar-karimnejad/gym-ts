@@ -4,7 +4,7 @@ import ActionButton from "@/shared/ActionButton ";
 
 function Contact() {
   return (
-    <div className="mx-auto mt-16 w-5/6">
+    <div className="mx-auto mt-16 w-5/6" id="contact-us">
       <div className="md:my-5 md:w-3/5">
         <h2 className="font-montserrat text-xl font-extrabold">
           <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
@@ -15,20 +15,20 @@ function Contact() {
           leo egestas nisi elit risus sit. Nunc cursus sagittis.
         </p>
       </div>
-      <div className="flex justify-between gap-16">
-        <form className="flex w-full flex-col gap-3">
+      <div className="flex flex-col justify-between gap-16 sm:flex-row">
+        <form className="flex w-full flex-1 flex-col gap-3">
           <input
-            className="rounded-md bg-primary-300 p-2 text-white placeholder:text-white"
+            className="rounded-md bg-primary-300 p-2 font-bold outline-none placeholder:text-white"
             type="text"
             placeholder="NAME"
           />
           <input
-            className="rounded-md bg-primary-300 p-2 text-white placeholder:text-white"
+            className="rounded-md bg-primary-300 p-2 font-bold outline-none placeholder:text-white"
             type="text"
             placeholder="EMAIL"
           />
           <textarea
-            className="resize-none rounded-md bg-primary-300 p-2 text-white placeholder:text-white"
+            className="resize-none rounded-md bg-primary-300 p-2 font-bold outline-none placeholder:text-white"
             name=""
             placeholder="MESSAGE"
             id=""
@@ -38,13 +38,17 @@ function Contact() {
             <ActionButton>Submit</ActionButton>
           </div>
         </form>
-        <div className="relative w-[680px] h-[430px]">
+        <div className="relative flex-1">
           <img
             className="h-full w-full"
             src={ContactUsPageGraphic}
             alt="ContactUsPageGraphic"
           />
-          <img className="-mt-7 absolute opacity-90 -z-50" src={EvolveText} alt="EvolveText" />
+          <img
+            className="absolute -z-50 -mt-[7%] opacity-90"
+            src={EvolveText}
+            alt="EvolveText"
+          />
         </div>
       </div>
     </div>

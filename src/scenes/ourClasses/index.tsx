@@ -6,6 +6,7 @@ import image5 from "@/assets/image5.png";
 import image6 from "@/assets/image6.png";
 import { ClassesProps } from "@/shared/types";
 import Class from "./Class";
+import { useEffect, useState } from "react";
 
 function OurClasses() {
   const classes: ClassesProps[] = [
@@ -44,7 +45,7 @@ function OurClasses() {
   ];
 
   return (
-    <div className="mt-16 bg-primary-100 py-16">
+    <div className="mt-16 bg-primary-100 py-16" id="our-classes">
       <div className="mx-auto w-5/6 md:my-5">
         <h2 className="font-montserrat text-xl font-extrabold">Our Classes</h2>
         <p className="py-5 md:w-3/5">
