@@ -52,6 +52,14 @@ function OurClasses({ setActiveNavItem }: OurClassesProps) {
     <div className="mt-16 bg-primary-100 py-16" id="our-classes">
       <motion.div
         onViewportEnter={() => setActiveNavItem("Our Classes")}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
         className="mx-auto w-5/6 md:my-5"
       >
         <h2 className="font-montserrat text-xl font-extrabold">Our Classes</h2>

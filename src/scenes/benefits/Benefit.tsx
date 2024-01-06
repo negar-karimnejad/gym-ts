@@ -1,4 +1,5 @@
 import { BenefitProps } from "@/shared/types";
+import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type BenefitPageProps = {
@@ -8,7 +9,13 @@ type BenefitPageProps = {
 
 function Benefit({ item, setActiveNavItem }: BenefitPageProps) {
   return (
-    <div className="mt-5 flex flex-col items-center justify-center gap-4 rounded-md border py-8 px-5">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+      className="mt-5 flex flex-col items-center justify-center gap-4 rounded-md border py-8 px-5"
+    >
       <div className="rounded-full border-2 border-gray-100 bg-primary-100 p-4">
         {item.icon}
       </div>
@@ -21,7 +28,7 @@ function Benefit({ item, setActiveNavItem }: BenefitPageProps) {
       >
         <p>Learn More</p>
       </AnchorLink>
-    </div>
+    </motion.div>
   );
 }
 
