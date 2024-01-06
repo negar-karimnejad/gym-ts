@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 type ActionButtonProps = {
   children: ReactNode;
