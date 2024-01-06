@@ -54,7 +54,11 @@ function Benefits({ setActiveNavItem }: BenefitsProps) {
       </motion.div>
       <div className="grid gap-2 sm:grid-cols-2  md:grid-cols-3">
         {benefits.map((item) => (
-          <Benefit key={item.title} {...item} />
+          <Benefit
+            setActiveNavItem={setActiveNavItem}
+            key={item.title}
+            item={item}
+          />
         ))}
       </div>
       <div className="mt-24 flex flex-col-reverse items-center gap-16 md:flex-row">
