@@ -16,6 +16,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
+        setActiveNavItem("Home");
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
@@ -57,6 +58,8 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+
+      {/* Mobile Menu Modal */}
       <div
         onClick={() => setIsMenuToggled(false)}
         className={`${
