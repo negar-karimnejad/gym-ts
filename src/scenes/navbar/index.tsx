@@ -26,32 +26,39 @@ const Navbar = (props: Props) => {
   }, []);
 
   return (
-    <div className={`${isTopOfPage ? "" : "fixed top-0 left-0 bg-primary-100 w-full z-50 drop-shadow"}`}>
-      <nav className="lg:max-w-screen-md sticky top-0 mx-auto flex w-5/6 justify-between py-5">
-        <div className="flex items-center gap-20">
-          <img src={Logo} alt="Logo" />
-          <ul className="hidden items-center gap-5 md:flex">
-            {navbarMenu.map((item) => (
-              <Link
-                title={item}
-                activeNavItem={activeNavItem}
-                setActiveNavItem={setActiveNavItem}
-              />
-            ))}
-          </ul>
-        </div>
-        <div className="hidden gap-5 md:flex">
-          <button>Sign In</button>
-          <ActionButton>Become a Member</ActionButton>
-        </div>
-        <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-secondary-400 md:hidden">
-          <Bars3Icon
-            onClick={() => setIsMenuToggled(true)}
-            className="h-5 w-5 text-white"
-          />
-        </div>
-      </nav>
-
+    <>
+      <div
+        className={`${
+          isTopOfPage
+            ? ""
+            : "fixed top-0 left-0 z-40 w-full bg-primary-100 drop-shadow"
+        }`}
+      >
+        <nav className="lg:max-w-screen-md sticky top-0 mx-auto flex w-5/6 justify-between py-5">
+          <div className="flex items-center gap-20">
+            <img src={Logo} alt="Logo" />
+            <ul className="hidden items-center gap-5 md:flex">
+              {navbarMenu.map((item) => (
+                <Link
+                  title={item}
+                  activeNavItem={activeNavItem}
+                  setActiveNavItem={setActiveNavItem}
+                />
+              ))}
+            </ul>
+          </div>
+          <div className="hidden gap-5 md:flex">
+            <button>Sign In</button>
+            <ActionButton>Become a Member</ActionButton>
+          </div>
+          <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-secondary-400 md:hidden">
+            <Bars3Icon
+              onClick={() => setIsMenuToggled(true)}
+              className="h-5 w-5 text-white"
+            />
+          </div>
+        </nav>
+      </div>
       <div
         onClick={() => setIsMenuToggled(false)}
         className={`${
@@ -79,7 +86,7 @@ const Navbar = (props: Props) => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
