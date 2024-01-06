@@ -16,7 +16,7 @@ function App() {
         setActiveNavItem={setActiveNavItem}
       />
       <Home setActiveNavItem={setActiveNavItem} />
-      <Benefits />
+      <Benefits setActiveNavItem={setActiveNavItem} />
       <OurClasses />
       <Contact />
       <Footer />

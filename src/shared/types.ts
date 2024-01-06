@@ -1,4 +1,4 @@
-export type benefitsProps= {
+export type BenefitProps= {
     icon: JSX.Element;
     title: string;
     description: string;

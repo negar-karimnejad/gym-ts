@@ -2,7 +2,7 @@ import AbstractWaves from "@/assets/AbstractWaves.png";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import Sparkles from "@/assets/Sparkles.png";
 import ActionButton from "@/shared/ActionButton ";
-import { benefitsProps } from "@/shared/types";
+import { BenefitProps } from "@/shared/types";
 import {
   AcademicCapIcon,
   HomeModernIcon,
@@ -10,8 +10,12 @@ import {
 } from "@heroicons/react/24/solid";
 import Benefit from "./Benefit";
 
-function Benefits() {
-  const benefits: benefitsProps[] = [
+type BenefitsProps = {
+  setActiveNavItem: (value: string) => void;
+};
+
+function Benefits({ setActiveNavItem }: BenefitsProps) {
+  const benefits: BenefitProps[] = [
     {
       icon: <HomeModernIcon className="h-6 w-6" />,
       title: "State of the Art Facilities",
@@ -74,7 +78,9 @@ function Benefits() {
             facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim
             mattis odio in risus nunc.
           </p>
-          <ActionButton>Join Now</ActionButton>
+          <ActionButton setActiveNavItem={setActiveNavItem}>
+            Join Now
+          </ActionButton>
           <img
             src={Sparkles}
             alt="Sparkles"
