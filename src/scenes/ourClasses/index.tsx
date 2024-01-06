@@ -5,10 +5,14 @@ import image4 from "@/assets/image4.png";
 import image5 from "@/assets/image5.png";
 import image6 from "@/assets/image6.png";
 import { ClassesProps } from "@/shared/types";
+import { motion } from "framer-motion";
 import Class from "./Class";
-import { useEffect, useState } from "react";
 
-function OurClasses() {
+type OurClassesProps = {
+  setActiveNavItem: (value: string) => void;
+};
+
+function OurClasses({ setActiveNavItem }: OurClassesProps) {
   const classes: ClassesProps[] = [
     {
       name: "Weight Training Classes",
@@ -46,7 +50,10 @@ function OurClasses() {
 
   return (
     <div className="mt-16 bg-primary-100 py-16" id="our-classes">
-      <div className="mx-auto w-5/6 md:my-5">
+      <motion.div
+        onViewportEnter={() => setActiveNavItem("Our Classes")}
+        className="mx-auto w-5/6 md:my-5"
+      >
         <h2 className="font-montserrat text-xl font-extrabold">Our Classes</h2>
         <p className="py-5 md:w-3/5">
           Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
@@ -54,7 +61,7 @@ function OurClasses() {
           facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim
           mattis odio in risus nunc.
         </p>
-      </div>
+      </motion.div>
       <div className="mt-10 h-[250px] overflow-x-auto overflow-y-hidden">
         <div className="w-[2100px]">
           {classes.map((item) => (

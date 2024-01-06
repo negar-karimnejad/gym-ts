@@ -17,8 +17,8 @@ function App() {
       />
       <Home setActiveNavItem={setActiveNavItem} />
       <Benefits setActiveNavItem={setActiveNavItem} />
-      <OurClasses />
-      <Contact />
+      <OurClasses setActiveNavItem={setActiveNavItem} />
+      <Contact setActiveNavItem={setActiveNavItem} />
       <Footer />
     </div>
   );

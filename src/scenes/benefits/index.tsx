@@ -8,6 +8,7 @@ import {
   HomeModernIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 import Benefit from "./Benefit";
 
 type BenefitsProps = {
@@ -38,7 +39,10 @@ function Benefits({ setActiveNavItem }: BenefitsProps) {
 
   return (
     <div className="mx-auto mt-16 w-5/6" id="benefits">
-      <div className="md:my-5 md:w-3/5">
+      <motion.div
+        onViewportEnter={() => setActiveNavItem("Benefits")}
+        className="md:my-5 md:w-3/5"
+      >
         <h2 className="font-montserrat text-xl font-extrabold">
           MORE THAN JUST GYM.
         </h2>
@@ -47,7 +51,7 @@ function Benefits({ setActiveNavItem }: BenefitsProps) {
           you to your ultimate fitness goals with ease. We provide true care
           into each and every member.
         </p>
-      </div>
+      </motion.div>
       <div className="grid gap-2 sm:grid-cols-2  md:grid-cols-3">
         {benefits.map((item) => (
           <Benefit key={item.title} {...item} />
