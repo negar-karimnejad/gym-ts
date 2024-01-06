@@ -6,11 +6,9 @@ import Link from "./Link";
 
 const navbarMenu = ["Home", "Benefits", "Our Classes", "Contact Us"];
 
-type Props = {};
-
-const Navbar = (props: Props) => {
-  const [activeNavItem, setActiveNavItem] = useState("Home");
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
+const Navbar = () => {
+  const [activeNavItem, setActiveNavItem] = useState<string>("Home");
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
 
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
