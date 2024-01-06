@@ -7,6 +7,8 @@ type LinkProps = {
 };
 
 function Link({ title, activeNavItem, setActiveNavItem }: LinkProps) {
+  console.log(title);
+
   return (
     <AnchorLink
       className={`${

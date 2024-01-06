@@ -7,7 +7,11 @@ import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import ActionButton from "@/shared/ActionButton ";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-function Home() {
+type HomeProps = {
+  setActiveNavItem: (value: string) => void;
+};
+
+function Home({ setActiveNavItem }: HomeProps) {
   return (
     <div className="bg-gray-20" id="home">
       <div className="mx-auto mt-16 flex w-5/6 flex-col items-center gap-16 py-10 md:flex-row">
@@ -24,12 +28,19 @@ function Home() {
             Body Now.
           </p>
           <div className="mt-5 flex items-center gap-8">
-            <ActionButton>Join Now</ActionButton>
+            <ActionButton setActiveNavItem={setActiveNavItem}>
+              Join Now
+            </ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
               href=""
             >
-              <p>Learn More</p>
+              <AnchorLink
+                onClick={() => setActiveNavItem("Contact Us")}
+                href="#contact-us"
+              >
+                Learn More
+              </AnchorLink>
             </AnchorLink>
           </div>
         </div>

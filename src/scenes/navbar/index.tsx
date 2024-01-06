@@ -2,12 +2,17 @@ import Logo from "@/assets/Logo.png";
 import ActionButton from "@/shared/ActionButton ";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import Link from "./Link";
+
+type NavbarProps = {
+  activeNavItem: string;
+  setActiveNavItem: (value: string) => void;
+};
 
 const navbarMenu = ["Home", "Benefits", "Our Classes", "Contact Us"];
 
-const Navbar = () => {
-  const [activeNavItem, setActiveNavItem] = useState<string>("Home");
+const Navbar = ({ activeNavItem, setActiveNavItem }: NavbarProps) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
 
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -46,9 +51,16 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden gap-5 md:flex">
-            <button>Sign In</button>
-            <ActionButton>Become a Member</ActionButton>
+          <div className="hidden items-center gap-5 md:flex">
+            <AnchorLink
+              onClick={() => setActiveNavItem("Contact Us")}
+              href="#contact-us"
+            >
+              Sign In
+            </AnchorLink>
+            <ActionButton setActiveNavItem={setActiveNavItem}>
+              Become a Member
+            </ActionButton>
           </div>
           <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-secondary-400 md:hidden">
             <Bars3Icon
@@ -64,7 +76,7 @@ const Navbar = () => {
         onClick={() => setIsMenuToggled(false)}
         className={`${
           isMenuToggled ? "block" : "hidden"
-        } fixed left-0 top-0 z-40 h-full w-full`}
+        } fixed left-0 top-0 z-40 h-full w-full md:hidden`}
       >
         <div
           onClick={() => setIsMenuToggled(false)}

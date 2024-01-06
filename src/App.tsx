@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Benefits from "./scenes/benefits";
 import Contact from "./scenes/contact";
 import Footer from "./scenes/footer";
@@ -6,10 +7,15 @@ import Navbar from "./scenes/navbar";
 import OurClasses from "./scenes/ourClasses";
 
 function App() {
+  const [activeNavItem, setActiveNavItem] = useState<string>("Home");
+
   return (
     <div className="app bg-gray-20">
-      <Navbar />
-      <Home />
+      <Navbar
+        activeNavItem={activeNavItem}
+        setActiveNavItem={setActiveNavItem}
+      />
+      <Home setActiveNavItem={setActiveNavItem} />
       <Benefits />
       <OurClasses />
       <Contact />
