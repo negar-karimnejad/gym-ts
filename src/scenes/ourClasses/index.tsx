@@ -49,9 +49,12 @@ function OurClasses({ setActiveNavItem }: OurClassesProps) {
   ];
 
   return (
-    <div className="mt-16 bg-primary-100 py-16" id="our-classes">
+    <motion.div
+      onViewportEnter={() => setActiveNavItem("Our Classes")}
+      className="mt-16 bg-primary-100 py-16"
+      id="our-classes"
+    >
       <motion.div
-        onViewportEnter={() => setActiveNavItem("Our Classes")}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -77,7 +80,7 @@ function OurClasses({ setActiveNavItem }: OurClassesProps) {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

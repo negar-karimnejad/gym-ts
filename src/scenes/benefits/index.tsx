@@ -38,10 +38,13 @@ function Benefits({ setActiveNavItem }: BenefitsProps) {
   ];
 
   return (
-    <div className="mx-auto mt-16 w-5/6" id="benefits">
+    <motion.div
+      onViewportEnter={() => setActiveNavItem("Benefits")}
+      className="mx-auto mt-16 w-5/6"
+      id="benefits"
+    >
       {/* HEADER */}
       <motion.div
-        onViewportEnter={() => setActiveNavItem("Benefits")}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -141,7 +144,7 @@ function Benefits({ setActiveNavItem }: BenefitsProps) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

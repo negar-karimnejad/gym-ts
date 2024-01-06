@@ -23,9 +23,12 @@ function Contact({ setActiveNavItem }: ContactProps) {
   };
 
   return (
-    <div className="mx-auto mt-16 w-5/6" id="contact-us">
+    <motion.div
+      onViewportEnter={() => setActiveNavItem("Contact Us")}
+      className="mx-auto mt-16 w-5/6"
+      id="contact-us"
+    >
       <motion.div
-        onViewportEnter={() => setActiveNavItem("Contact Us")}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -130,7 +133,7 @@ function Contact({ setActiveNavItem }: ContactProps) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
