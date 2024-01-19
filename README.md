@@ -22,6 +22,5 @@ I appreciate your support in advance. ❤</p>
 <p align="center">--------------------------------------------------------------</p>
   
 <p align="center">You can visit and explore in the <a href="https://gym-ts-382.pages.dev/" target="_blank">EVOGYM</a>.</p>
-<p align="center">📌Please Use VPN to see the site.</p>
 
 
